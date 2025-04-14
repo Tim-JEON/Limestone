@@ -1,0 +1,8 @@
+super-b/
+│
+├── index.html
+├── style.css
+├── images/
+│   └── banner.jpg
+├── favicon.ico
+└── CNAME (추후 추가)
