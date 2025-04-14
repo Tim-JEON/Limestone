@@ -2,134 +2,138 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SUPER-B Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SUPER-B | Memevolution Begins</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f7faff;
+      font-family: Comic Sans MS, cursive, sans-serif;
       margin: 0;
-      padding: 2rem;
-      background-color: #f9f9f9;
-      color: #333;
+      padding: 0;
+      color: #222;
     }
 
     header {
+      background: linear-gradient(45deg, #ff00cc, #3333ff);
+      color: #fff;
       text-align: center;
-      margin-bottom: 3rem;
+      padding: 3rem 1rem;
     }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      text-shadow: 2px 2px #000;
     }
 
-    p.tagline {
-      font-size: 1.1rem;
-      color: #777;
-    }
-
-    ul.blog-list {
-      list-style: none;
-      padding: 0;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    ul.blog-list li {
-      background: #fff;
-      margin-bottom: 1rem;
-      padding: 1.2rem 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      transition: transform 0.2s;
-    }
-
-    ul.blog-list li:hover {
-      transform: translateY(-3px);
-    }
-
-    ul.blog-list a {
-      text-decoration: none;
-      color: #2c3e50;
+    header p {
       font-size: 1.2rem;
-      display: block;
+      margin-top: 1rem;
+      font-style: italic;
     }
 
-    .meme-box {
-      background-color: #000;
-      color: #0f0;
+    .meme-banner {
+      background-color: #ffff00;
+      color: #000;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 1.6rem;
+      font-weight: bold;
+      border-top: 3px dashed red;
+      border-bottom: 3px dashed red;
+      animation: blink 1s step-start infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    .content {
       padding: 2rem;
-      margin: 4rem auto 2rem auto;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .content h2 {
+      text-align: center;
+      color: #ff33aa;
+    }
+
+    .blog-list {
+      list-style: "🧠 ";
+      padding-left: 1rem;
+    }
+
+    .blog-list li {
+      background: #fff;
+      margin: 1rem 0;
+      padding: 1rem;
       border-radius: 10px;
-      max-width: 720px;
+      border: 2px dotted #ff33aa;
+      transition: transform 0.3s;
+    }
+
+    .blog-list li:hover {
+      transform: scale(1.03) rotate(-1deg);
+      background: #eaffea;
+    }
+
+    .blog-list a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .meme-quote {
+      margin-top: 3rem;
+      background: #000;
+      color: lime;
+      padding: 2rem;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 1rem;
       text-align: center;
     }
 
-    .meme-box h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .meme-box p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-
-    .meme-box small {
-      display: block;
-      margin-top: 1.5rem;
-      font-size: 0.85rem;
-      opacity: 0.7;
+    .meme-quote strong {
+      font-size: 1.3rem;
     }
 
     footer {
       text-align: center;
-      margin-top: 4rem;
-      color: #aaa;
+      padding: 2rem;
       font-size: 0.9rem;
-    }
-
-    @media (max-width: 600px) {
-      body {
-        padding: 1rem;
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-
-      .meme-box h2 {
-        font-size: 1.5rem;
-      }
+      color: #888;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>SUPER-B Blog</h1>
-    <p class="tagline">Sharing Web3 insights, experiments & memes 🚀</p>
+    <h1>🧱 Super Brick Breaker Revolution 🧱</h1>
+    <p>One meme to rule them all. No utility, just pure velocity 💨</p>
   </header>
 
-  <ul class="blog-list">
-    <li><a href="posts/first-post.html">First Post – Launching the SuperB Project</a></li>
-    <!-- Add more blog entries like this: -->
-    <!-- <li><a href="posts/second-post.html">Second Post – Brick Meme Coins vs Real Brick</a></li> -->
-  </ul>
+  <div class="meme-banner">
+    $BRICK IS NOT A Official Super-b TOKEN. IT'S A VIBE.
+  </div>
 
-  <section class="meme-box">
-    <h2>🚀 SUPER-B MEME REVOLUTION 🚀</h2>
-    <p>
-      The Brick Meme Revolution begins here.<br />
-      listen up all the brick builders. its gonna be the meme show in the end <br />
-      Join <strong>SUPER-B</strong> and inject pure fun into the ai agent platform<br />
-      Flip charts? Nah. We flip vibes. To the brick the brick we go
-    </p>
-    <small>(Not financial advice... just meme magic.)</small>
-  </section>
+  <div class="content">
+    <h2>📜 Page of the Super Brick Breaker </h2>
+    <ul class="blog-list">
+      <li><a href="posts/first-post.html">🚀 First Post – The Super Brick Out </a></li>
+      <!-- <li><a href="posts/second-post.html">🧃 Second Post – How We built brick by brick and sooo Mooned</a></li> -->
+    </ul>
+
+    <div class="meme-quote">
+      <strong>“Buy the brick, feel the beam.”</strong><br>
+      – Ancient Superbian Proverb, Block 77777
+    </div>
+  </div>
 
   <footer>
-    &copy; 2025 SUPER-B. All rights reserved.
+    &copy; 2025 Superbrick-breaker. All rights preserved for the brick breaker 🌕
   </footer>
 
 </body>
