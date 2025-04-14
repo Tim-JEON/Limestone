@@ -1,57 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>SuperB Meme Coin Launch</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>super-b 블로그</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f5f7fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #f9f9f9;
       color: #333;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 20px;
     }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
     h1 {
-      color: #ff0066;
-      font-size: 2.5em;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
-    h2 {
-      color: #333;
-      margin-top: 40px;
+
+    p.tagline {
+      font-size: 1.1rem;
+      color: #777;
     }
-    a {
-      color: #0077cc;
+
+    ul.blog-list {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    ul.blog-list li {
+      background: #fff;
+      margin-bottom: 1rem;
+      padding: 1.2rem 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      transition: transform 0.2s;
+    }
+
+    ul.blog-list li:hover {
+      transform: translateY(-3px);
+    }
+
+    ul.blog-list a {
       text-decoration: none;
+      color: #2c3e50;
+      font-size: 1.2rem;
+      display: block;
     }
-    a:hover {
-      text-decoration: underline;
+
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      color: #aaa;
+      font-size: 0.9rem;
     }
-    .tagline {
-      font-size: 1.2em;
-      color: #666;
-      margin-bottom: 20px;
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>SuperB Meme Coin is Coming 🪙🚀</h1>
-  <p class="tagline">The most fabulous meme coin of 2025, powered by <strong>tim0x.sui</strong></p>
-  <p>We're building a meme-fueled community of fun, freedom, and fabulousness on the Sui blockchain.  
-     Join the journey to launch, laugh, and lead the SuperB wave.</p>
+  <header>
+    <h1>super-b 블로그</h1>
+    <p class="tagline">게임, 웹3, 그리고 일상 기록 ✍️</p>
+  </header>
 
-  <h2>🚧 Launch Updates & Logs</h2>
-  <ul>
-    <li><a href="posts/first-post.html">First Post: Project Overview & Roadmap</a></li>
-    <!-- Add more logs here later -->
+  <ul class="blog-list">
+    <li><a href="posts/first-post.html">첫 번째 글 - SuperB 프로젝트 시작기</a></li>
+    <!-- 필요 시 여기 아래에 글 추가 -->
+    <!-- <li><a href="posts/second-post.html">두 번째 글 - 개발자 없이 블로그 만들기</a></li> -->
   </ul>
 
-  <h2>🌐 Links</h2>
-  <ul>
-    <li><a href="https://x.com/super_b_io" target="_blank">Twitter/X</a></li>
-    <li><a href="https://discord.gg/super-b" target="_blank">Discord</a></li>
-    <li><a href="https://docsend.com/view/wjb8442ktuurxjpy" target="_blank">Intro Deck (DocSend)</a></li>
-    <li><a href="https://youtu.be/UifxLBfEZP8?si=fbVpssNFTXLEjQ6i" target="_blank">Trailer Video</a></li>
-  </ul>
+  <footer>
+    &copy; 2025 super-b. All rights reserved.
+  </footer>
 </body>
 </html>
+
