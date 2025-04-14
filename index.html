@@ -1,6 +1,3 @@
-from IPython.display import display, HTML
-
-html_template = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,10 +8,16 @@ html_template = """
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <!-- Twitter Embed -->
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
   <style>
     body {
-      background: #f7faff;
+      background-image: url('images/superb_background.jpg'); /* 선택한 배경 이미지 경로 */
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #000;
+      filter: contrast(140%) brightness(0.9) blur(1.2px);
+      animation: bgGlitch 4s infinite alternate ease-in-out;
       font-family: Comic Sans MS, cursive, sans-serif;
       margin: 0;
       padding: 0;
@@ -22,8 +25,14 @@ html_template = """
       transition: background 0.3s, color 0.3s;
     }
 
+    @keyframes bgGlitch {
+      0% { background-position: center; filter: brightness(0.8) hue-rotate(0deg); }
+      50% { background-position: center top; filter: brightness(1.1) hue-rotate(15deg); }
+      100% { background-position: center; filter: brightness(0.9) hue-rotate(-15deg); }
+    }
+
     body.dark {
-      background: #111;
+      background-color: #111;
       color: #eee;
     }
 
@@ -179,130 +188,6 @@ html_template = """
     }
 
     .rug-warning {
-      margin-top: 3rem;
-      padding: 2rem;
-      background: #ffe6e6;
-      border-left: 6px solid red;
-      font-weight: bold;
-      text-align: center;
-      font-size: 1.1rem;
-    }
-
-    .gif-section {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 3rem;
-      flex-wrap: wrap;
-    }
-
-    .gif-section img {
-      max-width: 200px;
-      border-radius: 10px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #888;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>🚨 SUPER-B MEME ZONE 🚨</h1>
-    <p class="tagline">Super Brick Breaker – One noob to break 'em all 🧱🔥</p>
-    <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Theme</button>
-  </header>
-
-  <div class="meme-banner">
-    $Brick IS NOT A TOKEN. IT'S A noob.
-  </div>
-
-  <div class="launch-countdown" id="countdown">
-    Brick Launch In: Loading...
-  </div>
-
-  <div class="content">
-    <h2>🧠 BrickPad of $brick breakers </h2>
-    <ul class="blog-list">
-      <li><a href="posts/first-post.html">🚀 First Post – The brick brokens</a></li>
-      <li><a href="posts/second-post.html">🧃 Second Post – How We break the break and sooo gonna be moon</a></li>
-    </ul>
-
-    <div class="meme-quote">
-      <strong>“Buy the meme, feel the beam.”</strong><br>
-      – Ancient Superbian Proverb, Block #77777
-    </div>
-
-    <div class="mint-section">
-      <p>Feeling bullish? Mint your meme now:</p>
-      <button onclick="alert('Just kidding. This isn’t on-chain... yet 😎')">MINT $SBrick</button>
-    </div>
-
-    <div class="tokenomics">
-      <h3>📊 SuperB Tokenomics</h3>
-      <table>
-        <tr><th>Category</th><th>Allocation</th></tr>
-        <tr><td>Community Airdrop</td><td>69%</td></tr>
-        <tr><td>Liquidity Pool</td><td>20%</td></tr>
-        <tr><td>Team & Memelords</td><td>10%</td></tr>
-        <tr><td>Super Secret Vault</td><td>1%</td></tr>
-      </table>
-    </div>
-
-    <div class="rug-warning">
-      🚨 Have YOU been rugged today? Not with SUPER-B. We break bricks, not hearts.
-    </div>
-
-    <div class="gif-section">
-      <img src="https://media.giphy.com/media/VbnUQpnihPSIgIXuZv/giphy.gif" alt="Dancing Pepe">
-      <img src="https://media.giphy.com/media/dTJd5ygpxkzWo/giphy.gif" alt="Party Doge">
-    </div>
-
-    <h3 style="text-align:center; margin-top:3rem;">🐦Wanna See some Tweets? </h3>
-    <div style="text-align:center;">
-      <a class="twitter-timeline" data-height="400" href="https://twitter.com/super_b_io?ref_src=twsrc%5Etfw">
-        Tweets by @super_b_io
-      </a>
-    </div>
-  </div>
-
-  <footer>
-    &copy; 2025 SUPER-B MEMEVERSE. No rights reserved. Just vibes.
-  </footer>
-
-  <script>
-    const launchDate = new Date("2025-06-01T00:00:00").getTime();
-    const countdownEl = document.getElementById("countdown");
-
-    setInterval(() => {
-      const now = new Date().getTime();
-      const distance = launchDate - now;
-
-      if (distance <= 0) {
-        countdownEl.innerText = "🚀 Super-b maniac $Brick HAS LAUNCHED!";
-        return;
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      countdownEl.innerText = `🚀 $Brick Launch In: ${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }, 30);
-
-    function toggleTheme() {
-      document.body.classList.toggle("dark");
-    }
-  </script>
-
-</body>
-</html>
-"""
-
-with open("/mnt/data/superb_full_meme_page.html", "w", encoding="utf-8") as f:
-    f.write(html_template)
+      margin-top: 3
+::contentReference[oaicite:9]{index=9}
+ 
