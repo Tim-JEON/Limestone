@@ -1,19 +1,30 @@
+from IPython.display import display, HTML
+
+html_template = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>the Brick Breaker from SUPER-B</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <title>SUPER-B | Super Brick Breaker</title>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <!-- Twitter Embed -->
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
   <style>
     body {
       background: #f7faff;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
+      font-family: Comic Sans MS, cursive, sans-serif;
       margin: 0;
       padding: 0;
       color: #222;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.dark {
+      background: #111;
+      color: #eee;
     }
 
     header {
@@ -21,6 +32,7 @@
       color: #fff;
       text-align: center;
       padding: 3rem 1rem;
+      position: relative;
     }
 
     header h1 {
@@ -34,6 +46,18 @@
       margin-top: 1rem;
       font-style: italic;
       color: #ffeecc;
+    }
+
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #000;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
     }
 
     .meme-banner {
@@ -58,10 +82,16 @@
       margin: auto;
     }
 
-    .content h2 {
-      text-align: center;
-      color: #ff33aa;
+    .launch-countdown {
+      font-family: 'Orbitron', sans-serif;
       font-size: 2rem;
+      background: #000;
+      color: #00ff00;
+      padding: 1rem 2rem;
+      text-align: center;
+      border-radius: 10px;
+      margin: 2rem auto;
+      box-shadow: 0 0 10px lime;
     }
 
     .blog-list {
@@ -124,7 +154,7 @@
       100% { transform: scale(1); }
     }
 
-    .tokenomics, .community, .countdown {
+    .tokenomics {
       margin-top: 4rem;
       background: #fff;
       padding: 1.5rem;
@@ -132,7 +162,7 @@
       border-radius: 12px;
     }
 
-    .tokenomics h3, .community h3, .countdown h3 {
+    .tokenomics h3 {
       text-align: center;
       margin-bottom: 1rem;
     }
@@ -158,6 +188,19 @@
       font-size: 1.1rem;
     }
 
+    .gif-section {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .gif-section img {
+      max-width: 200px;
+      border-radius: 10px;
+    }
+
     footer {
       text-align: center;
       padding: 2rem;
@@ -167,30 +210,36 @@
   </style>
 </head>
 <body>
+
   <header>
     <h1>🚨 SUPER-B MEME ZONE 🚨</h1>
-    <p class="tagline">Super Brick Breaker – naked and famous to break 'em all 🧱🔥</p>
+    <p class="tagline">Super Brick Breaker – One noob to break 'em all 🧱🔥</p>
+    <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Theme</button>
   </header>
 
   <div class="meme-banner">
-    $Brick IS NOT A TOKEN. IT'S A MOVEMENT.
+    $Brick IS NOT A TOKEN. IT'S A noob.
+  </div>
+
+  <div class="launch-countdown" id="countdown">
+    Brick Launch In: Loading...
   </div>
 
   <div class="content">
-    <h2>🧠 Blog of Brick breaker</h2>
+    <h2>🧠 BrickPad of $brick breakers </h2>
     <ul class="blog-list">
-      <li><a href="posts/first-post.html">🚀 First Post – The Brick breakens</a></li>
-      <li><a href="posts/second-post.html">🧃 Second Post – How We built brick by brick and sooo aiming to mooned</a></li>
+      <li><a href="posts/first-post.html">🚀 First Post – The brick brokens</a></li>
+      <li><a href="posts/second-post.html">🧃 Second Post – How We break the break and sooo gonna be moon</a></li>
     </ul>
 
     <div class="meme-quote">
-      <strong>“Buy the brick, feel the beam.”</strong><br>
-      – Ancient Super Balls and Dick Proverb, Block #77777
+      <strong>“Buy the meme, feel the beam.”</strong><br>
+      – Ancient Superbian Proverb, Block #77777
     </div>
 
     <div class="mint-section">
-      <p>Feeling bullish? Mint your brick now:</p>
-      <button onclick="alert('Just kidding. This isn’t on-chain... yet 😎')">MINT $SUPERB</button>
+      <p>Feeling bullish? Mint your meme now:</p>
+      <button onclick="alert('Just kidding. This isn’t on-chain... yet 😎')">MINT $SBrick</button>
     </div>
 
     <div class="tokenomics">
@@ -199,55 +248,61 @@
         <tr><th>Category</th><th>Allocation</th></tr>
         <tr><td>Community Airdrop</td><td>69%</td></tr>
         <tr><td>Liquidity Pool</td><td>20%</td></tr>
-        <tr><td>Balls and Dicks</td><td>10%</td></tr>
+        <tr><td>Team & Memelords</td><td>10%</td></tr>
         <tr><td>Super Secret Vault</td><td>1%</td></tr>
       </table>
-    </div>
-
-    <div class="community">
-      <h3>👾 Break the Brick B</h3>
-      <p style="text-align:center">
-        <a href="https://discord.gg/superb" target="_blank">🗨️ 🌐Taste some nugget</a> | 
-        <a href="https://twitter.com/super_b_io" target="_blank">🐦 X is just for shxtshow </a>
-      </p>
-    </div>
-
-    <div class="countdown">
-      <h3>⏰ Meme Launch Countdown</h3>
-      <p style="text-align:center; font-family: 'Press Start 2P', monospace; font-size: 1.2rem;">
-        <span id="countdown">Loading...</span>
-      </p>
     </div>
 
     <div class="rug-warning">
       🚨 Have YOU been rugged today? Not with SUPER-B. We break bricks, not hearts.
     </div>
+
+    <div class="gif-section">
+      <img src="https://media.giphy.com/media/VbnUQpnihPSIgIXuZv/giphy.gif" alt="Dancing Pepe">
+      <img src="https://media.giphy.com/media/dTJd5ygpxkzWo/giphy.gif" alt="Party Doge">
+    </div>
+
+    <h3 style="text-align:center; margin-top:3rem;">🐦Wanna See some Tweets? </h3>
+    <div style="text-align:center;">
+      <a class="twitter-timeline" data-height="400" href="https://twitter.com/super_b_io?ref_src=twsrc%5Etfw">
+        Tweets by @super_b_io
+      </a>
+    </div>
   </div>
 
   <footer>
-    &copy; 2025 Brick World. No rights reserved. Just brick vibes.
+    &copy; 2025 SUPER-B MEMEVERSE. No rights reserved. Just vibes.
   </footer>
 
   <script>
-    // Meme Launch Countdown (target: 2025-06-01)
+    const launchDate = new Date("2025-06-01T00:00:00").getTime();
     const countdownEl = document.getElementById("countdown");
-    const launchDate = new Date("2025-06-01T00:00:00Z");
 
-    function updateCountdown() {
-      const now = new Date();
-      const diff = launchDate - now;
-      if (diff <= 0) {
-        countdownEl.innerText = "🚀 IT’S MEME TIME! 🚀";
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      if (distance <= 0) {
+        countdownEl.innerText = "🚀 Super-b maniac $Brick HAS LAUNCHED!";
         return;
       }
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-      countdownEl.innerText = `${days}D ${hours}H ${minutes}M ${seconds}S`;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownEl.innerText = `🚀 $Brick Launch In: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 30);
+
+    function toggleTheme() {
+      document.body.classList.toggle("dark");
     }
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
   </script>
+
 </body>
 </html>
+"""
+
+with open("/mnt/data/superb_full_meme_page.html", "w", encoding="utf-8") as f:
+    f.write(html_template)
