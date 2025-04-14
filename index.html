@@ -20,7 +20,7 @@
       font-family: Comic Sans MS, cursive, sans-serif;
       margin: 0;
       padding: 0;
-      color: #222;
+      color: #39ff14;
       transition: background 0.3s, color 0.3s;
     }
 
@@ -28,6 +28,15 @@
       0% { background-position: center; filter: brightness(0.8) hue-rotate(0deg); }
       50% { background-position: center top; filter: brightness(1.1) hue-rotate(15deg); }
       100% { background-position: center; filter: brightness(0.9) hue-rotate(-15deg); }
+    }
+
+    @keyframes neonPulse {
+      0%, 100% { text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14; }
+      50% { text-shadow: 0 0 15px #39ff14, 0 0 30px #39ff14, 0 0 45px #39ff14; }
+    }
+
+    * {
+      animation: neonPulse 2s infinite;
     }
 
     header {
@@ -60,6 +69,23 @@
       border: none;
       padding: 0.5rem 1rem;
       border-radius: 6px;
+      cursor: pointer;
+    }
+
+    #wallet-connect-container {
+      position: absolute;
+      top: 20px;
+      right: 160px;
+      z-index: 999;
+    }
+
+    #connect-wallet {
+      background: #6f00ff;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
       cursor: pointer;
     }
 
@@ -204,6 +230,9 @@
   <header>
     <h1>🚨 SUPER-B MEME ZONE 🚨</h1>
     <p class="tagline">Brick Breaker – throw brick to break 'em all 🧱🔥</p>
+    <div id="wallet-connect-container">
+      <button id="connect-wallet">🔌 Connect Wallet</button>
+    </div>
     <button class="theme-toggle" onclick="document.body.classList.toggle('dark')">🌓 Toggle Theme</button>
   </header>
 
@@ -228,7 +257,7 @@
 
     <div class="mint-section">
       <p>Feeling bullish? Mint your meme now:</p>
-      <button onclick="alert('Wait, not because you're weak—but because timing hits harder than force')">MINT $BRICK</button>
+      <button onclick="alert('Wait, not because you\\'re weak—but because timing hits harder than force')">MINT $BRICK</button>
     </div>
 
     <div class="tokenomics">
@@ -270,7 +299,30 @@
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
       countdownEl.innerText = `🚀 Meme Launch In: ${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }, 50);
+    }, 1000);
+
+    // Sui Wallet Detection and Display
+    const connectButton = document.getElementById("connect-wallet");
+
+    async function detectSuiWallet() {
+      if (window.suiWallet) {
+        try {
+          const result = await window.suiWallet.requestPermissions();
+          const accounts = await window.suiWallet.getAccounts();
+          if (accounts.length > 0) {
+            const shortAddr = accounts[0].address.slice(0, 6) + "..." + accounts[0].address.slice(-4);
+            connectButton.innerText = "✅ " + shortAddr;
+            connectButton.disabled = true;
+          }
+        } catch (err) {
+          alert("Wallet connection failed.");
+        }
+      } else {
+        alert("Sui Wallet not detected. Please install it.");
+      }
+    }
+
+    connectButton.addEventListener("click", detectSuiWallet);
   </script>
 
 </body>
