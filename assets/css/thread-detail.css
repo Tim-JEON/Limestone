@@ -123,7 +123,7 @@
 .detail-tags span {
   padding: 8px 14px;
   border-radius: 999px;
-  background: rgba(127, 90, 255, 0.12);
+  background: rgba(255, 253, 236, 0.6);
   color: var(--color-accent);
   font-weight: 600;
   font-size: 0.85rem;
@@ -138,7 +138,7 @@
   background: var(--color-surface);
   border-radius: 18px;
   padding: 26px;
-  border: 1px solid rgba(127, 90, 255, 0.12);
+  border: 1px solid rgba(255, 253, 236, 0.6);
   box-shadow: 0 14px 40px rgba(15, 23, 42, 0.06);
   display: grid;
   gap: 14px;
@@ -167,8 +167,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 12px 14px;
-  border-radius: 14px;
-  background: rgba(127, 90, 255, 0.08);
+  background: rgba(255, 253, 236, 0.6);
   color: var(--color-accent);
   font-weight: 600;
   text-decoration: none;
