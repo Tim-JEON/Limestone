@@ -1,0 +1,219 @@
+.detail-hero {
+  position: relative;
+  padding: 120px 0 110px;
+  color: #fff;
+  overflow: hidden;
+}
+
+.detail-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.35), rgba(17, 24, 39, 0.7));
+}
+
+.detail-hero[data-cover="arcade"]::before {
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.35), rgba(17, 24, 39, 0.7)), url('../img/page3_2.png') center/cover;
+}
+
+.detail-hero[data-cover="pixel"]::before {
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.25), rgba(17, 24, 39, 0.65)), url('../img/page3_2.png') center/cover;
+}
+
+.detail-hero[data-cover="boss"]::before {
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.45), rgba(17, 24, 39, 0.75)), url('../img/page3_2.png') center/cover;
+}
+
+.detail-hero[data-cover="retro"]::before {
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.35), rgba(17, 24, 39, 0.78)), url('../img/page3_2.png') center/cover;
+}
+
+.detail-hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 24px;
+  max-width: 720px;
+}
+
+.detail-hero-inner .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: 999px;
+  background: rgba(127, 90, 255, 0.3);
+  font-weight: 600;
+}
+
+.detail-hero-inner h1 {
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  line-height: 1.1;
+}
+
+.detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-size: 0.98rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.detail-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.detail-hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.detail-content {
+  padding: 96px 0 120px;
+  background: var(--color-bg);
+}
+
+.detail-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 40px;
+}
+
+.detail-body {
+  background: var(--color-surface);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.08);
+  display: grid;
+  gap: 28px;
+}
+
+.detail-body h2 {
+  font-size: 1.6rem;
+  letter-spacing: -0.01em;
+}
+
+.detail-body p {
+  font-size: 1.02rem;
+  color: var(--color-text);
+  line-height: 1.75;
+}
+
+.detail-body p + p {
+  margin-top: 8px;
+}
+
+.detail-body blockquote {
+  margin: 12px 0 0;
+  padding-left: 18px;
+  border-left: 3px solid rgba(127, 90, 255, 0.5);
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+.detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.detail-tags span {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(127, 90, 255, 0.12);
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.detail-sidebar {
+  display: grid;
+  gap: 24px;
+}
+
+.detail-card {
+  background: var(--color-surface);
+  border-radius: 18px;
+  padding: 26px;
+  border: 1px solid rgba(127, 90, 255, 0.12);
+  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.06);
+  display: grid;
+  gap: 14px;
+}
+
+.detail-card h4 {
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.detail-card ul {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  color: var(--color-muted);
+  font-size: 0.92rem;
+}
+
+.related-list {
+  display: grid;
+  gap: 12px;
+}
+
+.related-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(127, 90, 255, 0.08);
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.related-item span:last-child {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+.empty-state {
+  padding: 40px;
+  text-align: center;
+  border-radius: 18px;
+  border: 1px dashed rgba(127, 90, 255, 0.4);
+  color: var(--color-muted);
+  background: rgba(127, 90, 255, 0.05);
+}
+
+@media (max-width: 1080px) {
+  .detail-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .detail-body {
+    padding: 32px;
+  }
+
+  .detail-sidebar {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 540px) {
+  .detail-hero {
+    padding: 100px 0 90px;
+  }
+
+  .detail-body {
+    padding: 26px;
+  }
+
+  .detail-hero-actions {
+    flex-direction: column;
+  }
+}

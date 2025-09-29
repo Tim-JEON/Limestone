@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SUPER-B | Community Forum</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="assets/css/community.css" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell nav">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">SB</span>
+        <span>SUPER-B creators</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html#features">기능</a>
+        <a href="index.html#highlight">스토리</a>
+        <a href="community.html" aria-current="page">커뮤니티</a>
+        <a href="index.html#plans">멤버십</a>
+        <a href="index.html#contact">지원</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="ghost-button" href="login.html">로그인</a>
+        <button class="solid-button" type="button">크리에이터 신청</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="community-hero">
+      <div class="shell hero-inner">
+        <span class="badge" data-hero-badge>이번 주 인기 토픽</span>
+        <h1 data-hero-title>“메탈릭 던전 시즌2” 팬 참여형 스토리 투표</h1>
+        <p data-hero-summary>새로운 시나리오 분기점을 팬 투표로 결정합니다. 미리보기 컷과 NPC 콘셉트를 우선 공개하세요!</p>
+        <div class="hero-meta">
+          <span><strong data-thread-count>0</strong>개 토픽</span>
+          <span>💬 실시간 의견 업데이트</span>
+          <span>🎮 게임 인사이트 & 굿즈 교환</span>
+        </div>
+        <div>
+          <a class="solid-button" href="#board">포럼 살펴보기</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="board" id="board">
+      <div class="shell board-grid">
+        <div class="thread-panel">
+          <div class="thread-toolbar">
+            <div>
+              <h2>최신 포럼 스레드</h2>
+              <span>크리에이터와 팬이 함께 만드는 SUPER-B 커뮤니티</span>
+            </div>
+            <div class="toolbar-actions">
+              <button class="ghost-button" type="button" id="sortNewest">최신순 보기</button>
+              <button class="solid-button" type="button" data-open-modal>새 스레드 열기</button>
+            </div>
+          </div>
+          <div id="threadList" class="thread-list"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="threadModal" aria-hidden="true">
+    <div class="modal-backdrop" data-modal-close></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header">
+        <h3 id="modalTitle">새 스레드 열기</h3>
+        <button class="modal-close" type="button" data-modal-close aria-label="닫기">×</button>
+      </div>
+      <p>메모리에 저장되는 샘플 데이터로 즉시 포럼 흐름을 테스트할 수 있습니다.</p>
+      <form id="threadForm" class="form-grid">
+        <div class="field">
+          <label for="title">제목</label>
+          <input id="title" name="title" type="text" placeholder="제목을 입력하세요" required />
+        </div>
+        <div class="field">
+          <label for="author">작성자</label>
+          <input id="author" name="author" type="text" placeholder="작성자 이름" required />
+        </div>
+        <div class="field">
+          <label for="role">역할/등급</label>
+          <input id="role" name="role" type="text" placeholder="예: 운영진, VIP, 팬" />
+        </div>
+        <div class="field">
+          <label for="badge">배지</label>
+          <select id="badge" name="badge">
+            <option value="">선택 없음</option>
+            <option value="운영 노트">운영 노트</option>
+            <option value="팬 포스트">팬 포스트</option>
+            <option value="VIP 라운지">VIP 라운지</option>
+            <option value="신규 토픽">신규 토픽</option>
+          </select>
+          <span class="form-helper">스레드 카드 상단에 표시되는 라벨입니다.</span>
+        </div>
+        <div class="field">
+          <label for="summary">요약</label>
+          <textarea id="summary" name="summary" placeholder="스레드 내용을 간략히 소개하세요" required></textarea>
+        </div>
+        <div class="field">
+          <label for="content">본문 내용</label>
+          <textarea id="content" name="content" placeholder="본문 내용을 자유롭게 작성하세요" rows="6"></textarea>
+        </div>
+        <div class="field">
+          <label for="tags">태그 (쉼표로 구분)</label>
+          <input id="tags" name="tags" type="text" placeholder="#게임디자인, #베타테스트" />
+        </div>
+        <div class="field">
+          <label for="cover">커버 이미지</label>
+          <select id="cover" name="cover">
+            <option value="arcade">아케이드</option>
+            <option value="pixel">픽셀</option>
+            <option value="boss">보스 전투</option>
+            <option value="retro">레트로</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="comments">댓글 수</label>
+          <input id="comments" name="comments" type="number" min="0" value="0" />
+        </div>
+        <div class="field">
+          <label for="highlight">하이라이트 문구</label>
+          <input id="highlight" name="highlight" type="text" placeholder="예: 👍 12 추천" />
+          <span class="form-helper">예: 👍 12 추천, 🔥 350 조회 등</span>
+        </div>
+        <div class="status-bar" id="statusBar">새 포럼 스레드를 추가했습니다.</div>
+        <div class="toolbar-actions">
+          <button class="ghost-button" type="button" data-modal-close>취소</button>
+          <button class="solid-button" type="submit">스레드 추가</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div class="shell">
+      <div class="footer-top">
+        <div>
+          <h4>SUPER-B</h4>
+          <p>팬과 더 가까워지는 프리미엄 멤버십 플랫폼. Fantrie 감성을 기반으로 합니다.</p>
+        </div>
+        <div>
+          <h4>제품</h4>
+          <div class="footer-links">
+            <a href="index.html#features">기능 소개</a>
+            <a href="index.html#plans">가격 플랜</a>
+            <a href="index.html#highlight">고객 사례</a>
+          </div>
+        </div>
+        <div>
+          <h4>리소스</h4>
+          <div class="footer-links">
+            <a href="first-post.html">온보딩 가이드</a>
+            <a href="first-post.html">크리에이터 아카데미</a>
+            <a href="#">API 문서</a>
+          </div>
+        </div>
+        <div>
+          <h4>지원</h4>
+          <div class="footer-links">
+            <a href="index.html#contact">문의하기</a>
+            <a href="#">자주 묻는 질문</a>
+            <a href="#">정책 및 약관</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 SUPER-B. All rights reserved.</span>
+        <span>서울시 성동구 성수동 | contact@superb.com</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/community.js" defer></script>
+</body>
+</html>

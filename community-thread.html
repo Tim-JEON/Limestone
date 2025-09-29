@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SUPER-B | Forum Detail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="assets/css/community.css" rel="stylesheet" />
+  <link href="assets/css/thread-detail.css" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell nav">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">SB</span>
+        <span>SUPER-B creators</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html#features">기능</a>
+        <a href="index.html#highlight">스토리</a>
+        <a href="community.html" aria-current="page">커뮤니티</a>
+        <a href="index.html#plans">멤버십</a>
+        <a href="index.html#contact">지원</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="ghost-button" href="login.html">로그인</a>
+        <a class="solid-button" href="community.html#board">커뮤니티로 돌아가기</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="detail-hero" data-cover="arcade">
+      <div class="shell detail-hero-inner">
+        <span class="badge" data-thread-badge>추천 토픽</span>
+        <h1 data-thread-title>포럼 스레드 제목</h1>
+        <div class="detail-meta">
+          <span data-thread-author>작성자</span>
+          <span data-thread-role>역할</span>
+          <span data-thread-timestamp>업데이트</span>
+        </div>
+        <div class="detail-hero-actions">
+          <a class="ghost-button" href="community.html#board">← 목록으로</a>
+          <a class="solid-button" href="community.html#board">커뮤니티 홈</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-content">
+      <div class="shell detail-layout">
+        <article class="detail-body" data-thread-body>
+          <div>
+            <h2>요약</h2>
+            <p data-thread-summary>선택된 스레드의 요약이 표시됩니다.</p>
+          </div>
+          <div>
+            <h2>본문</h2>
+            <div data-thread-content>
+              <p>로드 중입니다…</p>
+            </div>
+          </div>
+        </article>
+        <aside class="detail-sidebar">
+          <div class="detail-card">
+            <h4>스레드 정보</h4>
+            <ul>
+              <li data-thread-comments>댓글 0개</li>
+              <li data-thread-highlight>하이라이트 없음</li>
+            </ul>
+          </div>
+          <div class="detail-card">
+            <h4>태그</h4>
+            <div class="detail-tags" data-thread-tags>
+              <span>#forum</span>
+            </div>
+          </div>
+          <div class="detail-card" data-related-wrapper>
+            <h4>다른 스레드</h4>
+            <div class="related-list" data-thread-related></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">
+      <div class="footer-top">
+        <div>
+          <h4>SUPER-B</h4>
+          <p>팬과 더 가까워지는 프리미엄 멤버십 플랫폼. Fantrie 감성을 기반으로 합니다.</p>
+        </div>
+        <div>
+          <h4>제품</h4>
+          <div class="footer-links">
+            <a href="index.html#features">기능 소개</a>
+            <a href="index.html#plans">가격 플랜</a>
+            <a href="index.html#highlight">고객 사례</a>
+          </div>
+        </div>
+        <div>
+          <h4>리소스</h4>
+          <div class="footer-links">
+            <a href="first-post.html">온보딩 가이드</a>
+            <a href="first-post.html">크리에이터 아카데미</a>
+            <a href="#">API 문서</a>
+          </div>
+        </div>
+        <div>
+          <h4>지원</h4>
+          <div class="footer-links">
+            <a href="index.html#contact">문의하기</a>
+            <a href="#">자주 묻는 질문</a>
+            <a href="#">정책 및 약관</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 SUPER-B. All rights reserved.</span>
+        <span>서울시 성동구 성수동 | contact@superb.com</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/thread-detail.js" defer></script>
+</body>
+</html>
