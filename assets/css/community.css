@@ -1,17 +1,18 @@
 :root {
   color-scheme: light;
-  --color-bg: #f4f5ff;
-  --color-surface: #ffffff;
-  --color-text: #111827;
-  --color-muted: #6b7280;
-  --color-border: #e5e7eb;
-  --color-accent: #7f5aff;
-  --color-accent-soft: rgba(127, 90, 255, 0.12);
-  --radius-sm: 14px;
-  --radius-lg: 28px;
-  --shadow-sm: 0 10px 30px rgba(15, 23, 42, 0.06);
-  --shadow-lg: 0 40px 80px rgba(17, 24, 39, 0.15);
-  --max-width: 1180px;
+  --color-bg: #fffaf0;
+  --color-surface: #ffffffcc;
+  --color-text: #333222;
+  --color-muted: #997a00;
+  --color-border: #ffe599;
+  --color-accent: #ffaa00;
+  --color-accent-dark: #ff7700;
+
+  --radius-lg: 30px;
+  --radius-md: 18px;
+  --shadow-lg: 0 40px 80px rgba(255, 153, 0, 0.15);
+  --shadow-sm: 0 20px 40px rgba(255, 204, 0, 0.12);
+  --max-width: 420px;
 }
 
 * {
@@ -21,13 +22,13 @@
 }
 
 body {
-  font-family: 'Inter', 'Noto Sans KR', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: linear-gradient(140deg, #f6f7ff 0%, #eef1ff 45%, #ffffff 100%);
-  color: var(--color-text);
-  line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  background: linear-gradient(to bottom right, #fff8dc, #ffe4b5, #fffaf0);
+  background-image: url("/assets/img/KakaoTalk_20250929_201905502.jpg"); /* 이미지 경로에 맞게 수정 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  filter: brightness(0.9) saturate(1.2) blur(2px);
 }
 
 body.is-modal-open {
@@ -172,7 +173,7 @@ main {
 
 .hero-inner {
   position: relative;
-  z-index: 1;
+  z-index: -1;
   display: grid;
   gap: 24px;
   max-width: 620px;
@@ -461,13 +462,13 @@ main {
 .modal-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(15, 23, 42, 0.45);
+  background: rgba(255, 253, 236, 0.6);
   backdrop-filter: blur(6px);
 }
 
 .modal-card {
   position: relative;
-  z-index: 1;
+  z-index: -1;
   width: min(560px, 92vw);
   max-height: 88vh;
   overflow-y: auto;
